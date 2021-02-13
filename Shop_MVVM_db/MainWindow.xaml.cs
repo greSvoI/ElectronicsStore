@@ -40,7 +40,12 @@ namespace Shop_MVVM_db
 
 		private void Listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			listbox2.ItemsSource = shop.Phones.Local.ToBindingList();
+			if(listbox.SelectedIndex ==0)
+				listbox2.ItemsSource = shop.Phones.Local.ToBindingList();
+			if (listbox.SelectedIndex == 1)
+				listbox2.ItemsSource = shop.TVS.Local.ToBindingList();
+			if (listbox.SelectedIndex == 2)
+				listbox2.ItemsSource = shop.Laptops.Local.ToBindingList();
 		}
 
 		private void buttonAdd_Click(object sender, RoutedEventArgs e)
